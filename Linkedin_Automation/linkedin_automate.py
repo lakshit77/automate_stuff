@@ -1,6 +1,7 @@
 import re
 import requests
 import json
+import os
 
 class LinkedinAutomate:
     def __init__(self, access_token, yt_url, title, description):
@@ -80,15 +81,15 @@ class LinkedinAutomate:
         print(self.user_id)
 
         feed_post = self.feed_post()
-        # print(feed_post)
-        # for group_id in self.python_group_list:
-        #     print(group_id)
-        #     group_post = self.group_post(group_id)
-        #     print(group_post)
+        print(feed_post)
+        for group_id in self.python_group_list:
+            print(group_id)
+            group_post = self.group_post(group_id)
+            print(group_post)
 
-access_token = "AQXNzQQm6rpNPcfUR7WGXJIHNu87QPVX-F9BUK_z1capJSThsMbMMcFKcmk28yCLGEc3OY1iFH1Zt9Q8hTSuhj8OVHIl6k4ADMLCXYLmcGu5KRxaQe5GOq4gWJeRoM7XietwOdwG0mTt9xcKxlY-JURwyD5HjZYECvf-onVnw0ChgHV8biPqJlWHgJy8fTiXLWCrRVFrolcuvye62v2F1iBNb0c8XD_gkShnXS8fCjO0HrF1NjuRqXxMTfu6KyCAk1k572TLAUPATdYC31suyTRdHnWtBZgrlxlE2siNqeK4zgJTOQFqHRuRcpF8JqXqStNDu_udsQfzhdCVPHXnNOiYv0nH-A"
+access_token = os.environ.get("LINKEDIN_ACCESS_KEY")
 yt_url = "https://www.youtube.com/watch?v=Mn6gIEM33uU"
-title = "Filtering, Searching, Ordering in Django Rest Framework Part s2"
+title = "Filtering, Searching, Ordering in Django Rest Framework Part ss2"
 description = "Are you tired of sifting through an endless sea of data to find the information you need in your Django project? Look no further! With Django filtering in Django Rest Framework, you can easily sort through your data and extract the information you need with just a few simple commands. Say goodbye to endless scrolling and manual data sorting, and say hello to increased efficiency and productivity in your Django workflow. Join the ranks of top-tier developers who have mastered this powerful tool, and start simplifying your data management today! \n #filtering #techsunami #djangofilter"
 
 LinkedinAutomate(access_token, yt_url, title, description).main_func()
